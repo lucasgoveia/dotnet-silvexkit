@@ -11,6 +11,7 @@
         <PackageTags>silvexkit;snowflake;efcore;valueconverter</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <NoWarn>$(NoWarn);1591</NoWarn>
+        <Version>1.0.0</Version>
     </PropertyGroup>
 
     <ItemGroup>
