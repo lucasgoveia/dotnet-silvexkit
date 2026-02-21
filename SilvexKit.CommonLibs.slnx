@@ -10,4 +10,8 @@
     <Project Path="snowflakeid/SilvexKit.SnowflakeIds.EF/SilvexKit.SnowflakeIds.EF.csproj" />
     <Project Path="snowflakeid/SilvexKit.SnowflakeIds/SilvexKit.SnowflakeIds.csproj" />
   </Folder>
+  <Folder Name="/usecases/">
+    <Project Path="usecases/SilvexKit.UseCases.DependencyInjection/SilvexKit.UseCases.DependencyInjection.csproj" />
+    <Project Path="usecases/SilvexKit.UseCases/SilvexKit.UseCases.csproj" />
+  </Folder>
 </Solution>
