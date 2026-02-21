@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <PackageId>SilvexKit.Results</PackageId>
+        <Title>SilvexKit.Results</Title>
+        <Description>Result pattern primitives for explicit success and error flows.</Description>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageTags>silvexkit;result;error-handling;functional</PackageTags>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SilvexKit.UnitValue\SilvexKit.UnitValue.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+</Project>
+
+
+
+
+
+

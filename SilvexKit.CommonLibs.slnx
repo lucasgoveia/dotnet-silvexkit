@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/results/">
+    <Project Path="results/SilvexKit.Results.AspNetCore/SilvexKit.Results.AspNetCore.csproj" />
+    <Project Path="results/SilvexKit.Results.FluentValidation/SilvexKit.Results.FluentValidation.csproj" />
+    <Project Path="results/SilvexKit.Results/SilvexKit.Results.csproj" />
+    <Project Path="results/SilvexKit.UnitValue/SilvexKit.UnitValue.csproj" />
+  </Folder>
+  <Folder Name="/snowflakeid/">
+    <Project Path="snowflakeid/SilvexKit.SnowflakeIds.Dapper/SilvexKit.SnowflakeIds.Dapper.csproj" />
+    <Project Path="snowflakeid/SilvexKit.SnowflakeIds.EF/SilvexKit.SnowflakeIds.EF.csproj" />
+    <Project Path="snowflakeid/SilvexKit.SnowflakeIds/SilvexKit.SnowflakeIds.csproj" />
+  </Folder>
+</Solution>

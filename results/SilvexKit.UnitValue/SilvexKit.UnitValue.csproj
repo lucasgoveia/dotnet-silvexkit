@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <PackageId>SilvexKit.UnitValue</PackageId>
+        <Title>SilvexKit.UnitValue</Title>
+        <Description>Unit type for value-less success flows.</Description>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageTags>silvexkit;unit;functional;result-pattern</PackageTags>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Include="README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+</Project>
+
+
+
+
+
