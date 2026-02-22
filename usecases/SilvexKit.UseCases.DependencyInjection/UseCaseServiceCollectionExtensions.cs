@@ -13,18 +13,13 @@ public static class UseCaseServiceCollectionExtensions
     {
         var candidates = assembly
             .GetTypes()
-            .Where(t => t is { IsClass: true, IsAbstract: false, IsGenericTypeDefinition: false });
+            .Where(type => type is { IsAbstract: false, IsInterface: false } &&
+                           type.GetInterface(typeof(IUseCase<,>).Name) != null)
+            .ToArray();
 
-        foreach (var implementationType in candidates)
+        foreach (var handler in candidates)
         {
-            var useCaseInterfaces = implementationType
-                .GetInterfaces()
-                .Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IUseCase<,>));
-
-            foreach (var serviceType in useCaseInterfaces)
-            {
-                services.TryAdd(new ServiceDescriptor(serviceType, implementationType, lifetime));
-            }
+            services.AddScoped(handler);
         }
 
         return services;
