@@ -95,10 +95,25 @@ public record Result<T> : IResult
     {
         return new ErrorResult { Errors = new List<AppError> { new(errorMessage) }, Type = ErrorType.Error };
     }
+    
+    public static ErrorResult Error(AppError appError)
+    {
+        return new ErrorResult { Errors = new List<AppError> { appError }, Type = ErrorType.Error };
+    }
+
+    public static ErrorResult UnprocessableEntity()
+    {
+        return new ErrorResult { Errors = Array.Empty<AppError>(), Type = ErrorType.UnprocessableEntity };
+    }
 
     public static ErrorResult UnprocessableEntity(string errorMessage)
     {
         return new ErrorResult { Errors = new List<AppError> { new(errorMessage) }, Type = ErrorType.UnprocessableEntity };
+    }
+    
+    public static ErrorResult UnprocessableEntity(AppError appError)
+    {
+        return new ErrorResult { Errors = new List<AppError> { appError }, Type = ErrorType.UnprocessableEntity };
     }
 
     public static ErrorResult Invalid(string message)
@@ -129,23 +144,41 @@ public record Result<T> : IResult
     {
         return new ErrorResult { Errors = Array.Empty<AppError>(), Type = ErrorType.NotFound };
     }
-
+    
+    public static ErrorResult NotFound(string message)
+    {
+        return new ErrorResult { Errors = new List<AppError> { new AppError(message) }, Type = ErrorType.NotFound };
+    }
+    
+    public static ErrorResult NotFound(AppError appError)
+    {
+        return new ErrorResult { Errors = new List<AppError> { appError }, Type = ErrorType.NotFound };
+    }
 
     public static ErrorResult Forbidden()
     {
         return new ErrorResult { Errors = Array.Empty<AppError>(), Type = ErrorType.Forbidden };
     }
-
-
+    
     public static ErrorResult Unauthorized()
     {
         return new ErrorResult { Errors = Array.Empty<AppError>(), Type = ErrorType.Unauthorized };
     }
-
+    
 
     public static ErrorResult Conflict()
     {
         return new ErrorResult { Errors = Array.Empty<AppError>(), Type = ErrorType.Conflict };
+    }
+    
+    public static ErrorResult Conflict(string message)
+    {
+        return new ErrorResult { Errors = new List<AppError> { new AppError(message) }, Type = ErrorType.Conflict };
+    }
+
+    public static ErrorResult Conflict(AppError appError)
+    {
+        return new ErrorResult { Errors = new List<AppError> { appError }, Type = ErrorType.Conflict };
     }
 
     #endregion
@@ -177,6 +210,11 @@ public record Result<T> : IResult
     public static SuccessResult Accepted()
     {
         return Success(SuccessType.Accepted);
+    }
+    
+    public static SuccessResult<TV> Accepted<TV>(TV value)
+    {
+        return Success(value, SuccessType.Accepted);
     }
 
 

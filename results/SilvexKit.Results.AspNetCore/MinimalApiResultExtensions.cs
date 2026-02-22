@@ -1,4 +1,3 @@
-using System;
 using System.Net;
 using Microsoft.AspNetCore.Http;
 
@@ -22,7 +21,7 @@ public static class MinimalApiResultExtensions
             ErrorType.Forbidden => TypedResults.Forbid(),
             ErrorType.Unauthorized => TypedResults.Unauthorized(),
             ErrorType.Invalid => TypedResults.BadRequest(result.Errors),
-            ErrorType.NotFound => TypedResults.NotFound(),
+            ErrorType.NotFound => TypedResults.NotFound(result.Errors),
             ErrorType.Conflict => TypedResults.Conflict(result.Errors),
             ErrorType.UnprocessableEntity => TypedResults.UnprocessableEntity(result.Errors),
             _ => throw new InvalidOperationException(),
